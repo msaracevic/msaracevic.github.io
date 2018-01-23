@@ -25,7 +25,7 @@ export default class Header extends Component {
           </div>
           <ul className="navigation__content">
             <li className="navigation__link">
-              <Link to="/resources">Resources</Link>
+              <Link to="/resources" onClick={this.showMobile}>Resources</Link>
             </li>
           </ul>
         </nav>
