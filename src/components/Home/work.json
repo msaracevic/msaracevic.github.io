@@ -1,0 +1,31 @@
+{
+  "professional": [
+    {
+      "company": "Circle Products GmbH",
+      "start": "October 2015",
+      "end": "-",
+      "position": "Frontend Developer",
+      "location": "Berlin",
+      "responsibilities": "Working on several projects: Cafe Royal, Delizio and Cremesso. We developed frontend solution running on top of Shopware. Also developed some in house tools.",
+      "technologies": "JavaScript, Node.js, jQuery, Gulp, SASS/CSS, Smarty, Handlebars, npm, git."
+    },
+    {
+      "company": "Task36 GmbH",
+      "start": "February 2015",
+      "end": "September 2015",
+      "position": "Junior Frontend Developer",
+      "location": "Berlin",
+      "responsibilities": "during my time in Task 36 I was involved in improving UI for a single page application. Most of my work was focused on creating fast Gantt charts (SVG based) and creating new onboarding wizard, as well as improving CSS styles and optimizing performance.",
+      "technologies": "JavaScript, jQuery, LESS/CSS, BEM, git."
+    },
+    {
+      "company": "Cowboy Venture UG",
+      "start": "June 2014",
+      "end": "December 2014",
+      "position": "Intern Frontend Developer",
+      "location": "Berlin",
+      "responsibilities": "During the internship I have worked on SelfTrackIO and Quiary. I was working in team with a backend developer and we developed new application to track data about personal health.",
+      "technologies": "JavaScript, jQuery, D3.js, dimple.js, LESS, Ruby on Rails, git."
+    }
+  ]
+}

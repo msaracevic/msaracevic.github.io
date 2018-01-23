@@ -1,0 +1,69 @@
+@mixin flex($value) {
+  flex: 0 0 $value;
+  @include ie-flex-fix($value)
+}
+
+@mixin flex-grid($sm, $md, $lg) {
+  flex: 0 0 $sm;
+  @include ie-flex-fix($sm);
+  @include media-breakpoint-up(md) {
+    flex: 0 0 $md;
+    @include ie-flex-fix($md);
+  }
+  @include media-breakpoint-up(lg) {
+    flex: 0 0 $lg;
+    @include ie-flex-fix($lg);
+  }
+}
+
+@mixin ie-flex-fix($flex-number) {
+  @media all and (-ms-high-contrast: none) {
+    max-width: $flex-number;
+  }
+}
+
+@mixin position($top, $right, $bottom, $left) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin fixed($top, $right, $bottom, $left) {
+  position: fixed;
+  @include position($top, $right, $bottom, $left);
+}
+
+@mixin absolute($top, $right, $bottom, $left) {
+  position: absolute;
+  @include position($top, $right, $bottom, $left);
+}
+
+@mixin flex-padding ($value){
+  @include media-breakpoint-up(md) {
+    padding: 0 0 0 $value;
+    &:nth-of-type(odd) {
+      padding: 0 $value 0 0;
+    }
+  }
+}
+
+@mixin box {
+  display: flex;
+}
+
+@mixin box__label ($width: 100px) {
+  flex: 0 0 $width;
+  font-weight: bold;
+}
+
+@mixin box__value {
+  flex-grow: 1;
+}
+
+@mixin paddless-header {
+  h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+  }
+}

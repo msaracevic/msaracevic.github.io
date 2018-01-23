@@ -1,0 +1,65 @@
+body {
+  font-family: 'Lato', 'Helvetica','Verdana','Arial' sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+h1, h2 {
+  font-size: 125%;
+  font-weight: bold;
+  margin: .5rem 0 .5rem;
+  flex: 0 0 100%;
+}
+
+h3 {
+  font-size: 120%;
+  font-weight: bold;
+  margin: .5rem 0 .5rem;
+  flex: 0 0 100%;
+}
+
+h4 {
+  font-size: 110%;
+  font-weight: bold;
+  margin: .5rem 0 .5rem;
+  flex: 0 0 100%;
+}
+
+h5 {
+  font-size: 110%;
+  margin: .5rem 0 .5rem;
+  flex: 0 0 100%;
+}
+
+h6 {
+  font-size: 100%;
+  margin: .5rem 0 .5rem;
+  flex: 0 0 100%;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.muted {
+  color: #999;
+}
+
+.small {
+  font-size: 80%;
+}
+
+.disclaimer {
+  @extend .muted;
+  @extend .small;
+}
+
+%ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
