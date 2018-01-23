@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
-import work from './work.json';
+import work from '../../data/work.json';
 
 export default class Home extends Component {
 
-  static workItem(type) {
-    return work[type].map((item, index) => (
+  constructor(props) {
+    super(props);
+    this.state = work;
+  };
+
+  workItem(type) {
+    return this.state[type].map((item, index) => (
       <section key={index} className="work__item">
         <h3 className="work__title">{item.company}, {item.location} - {item.position}</h3>
         <p className="disclaimer">From {item.start} to {item.end}</p>
@@ -52,7 +57,7 @@ export default class Home extends Component {
         </section>
         <article className="work">
           <h3>Work experience</h3>
-          {Home.workItem('professional')}
+          {this.workItem('professional')}
         </article>
       </article>
     );
