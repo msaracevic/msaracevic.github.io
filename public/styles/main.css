@@ -113,7 +113,7 @@ form {
     display: block;
     margin: 0 auto; }
 
-.long-text {
+.long-text, .personal__tagline, .work__item {
   max-width: 600px; }
 
 img {
@@ -582,8 +582,7 @@ p {
 .work {
   padding: 1rem 0 0 1rem; }
   .work__item {
-    padding: 0 0 1rem;
-    max-width: 600px; }
+    padding: 0 0 1rem; }
     @media (min-width: 768px) {
       .work__item {
         padding: 0.5rem 0 1rem 1rem; } }

@@ -27,6 +27,9 @@
       color: gray
     }
   }
+  &__tagline {
+    @extend .long-text;
+  }
   &__contact {
     display: inline-flex;
     align-items: center;
@@ -42,8 +45,8 @@
 .work {
   padding: 1rem 0 0 1rem;
   &__item {
+    @extend .long-text;
     padding: 0 0 1rem;
-    max-width: 600px;
     @include media-breakpoint-up(md) {
       padding: 0.5rem 0 1rem 1rem;
     }
