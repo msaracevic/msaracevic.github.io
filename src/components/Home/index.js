@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import work from '../../data/work.json';
+import {duration} from '../../helpers/index';
 
 export default class Home extends Component {
   constructor(props) {
@@ -13,7 +14,9 @@ export default class Home extends Component {
         <h5 className="work__title">
           <span className="bold">{item.company}</span>, {item.location} - {item.position}
         </h5>
-        <p className="disclaimer">From {item.start} to {item.end}</p>
+        <p className="disclaimer">
+          From {item.start} to {item.end} ({duration(item.start, item.end)})
+        </p>
         <p>Responsibilities: {item.responsibilities}</p>
         <p>Technologies and tools used: {item.technologies}</p>
       </section>

@@ -583,6 +583,8 @@ p {
   padding: 1rem 0 0 1rem; }
   .work__item {
     padding: 0 0 1rem; }
+    .work__item:first-of-type {
+      padding-top: 0.5rem; }
     @media (min-width: 768px) {
       .work__item {
         padding: 0.5rem 0 1rem 1rem; } }
