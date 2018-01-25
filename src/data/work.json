@@ -43,5 +43,19 @@
       "responsibilities": "During the internship I have worked on SelfTrackIO and Quiary. I was working in team with a backend developer and we developed new application to track data about personal health.",
       "technologies": "JavaScript, jQuery, D3.js, dimple.js, LESS, Ruby on Rails, git."
     }
+  ],
+  "personal": [
+    {
+      "project": "Quantum Anomaly Website",
+      "url": "https://quantum-anomaly.herokuapp.com/",
+      "description": "Website which was developed for my online gaming hobby. Couple of people use it as information source and to check various states of games via API. It has started as basic scripts and then extended a bit to be useful to larger audience playing same online games",
+      "technologies": "React.js, Node.js, Postgres, SASS/CSS, Webpack, hosted on Heroku"
+    },
+    {
+      "project": "Personal Website",
+      "url": "https://github.com/msaracevic/msaracevic.github.io/tree/develop",
+      "description": "Source code for this site. It get's deployed from master branch and source code can be found on develop branch.",
+      "technologies": "React.js, SASS/CSS, Webpack, hosted on GitHub"
+    }
   ]
 }

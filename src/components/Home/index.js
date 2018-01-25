@@ -27,6 +27,19 @@ export default class Home extends Component {
     ));
   }
 
+  personalProjectItem(type) {
+    return this.state[type].map((item, index) => (
+      <section key={index} className="project__item">
+        <h5 className="work__title">{item.project}</h5>
+        <p className="project__link">
+         <a href={item.url} target="_blank">Link to project</a> <span className="disclaimer">(opens in new tab)</span>
+        </p>
+        <p>{item.description}</p>
+        <p className="work__tech">Tech stack: {item.technologies}</p>
+      </section>
+    ));
+  }
+
   availability() {
     const available = this.state.available;
     return (
@@ -72,6 +85,11 @@ export default class Home extends Component {
       <article className="work home__work">
         <h2>Work experience</h2>
         {this.workItem('professional')}
+
+        <h2 className="project__title" data-subline="Only the ones hosted online">
+          Personal projects
+        </h2>
+        {this.personalProjectItem('personal')}
       </article>
     );
   }

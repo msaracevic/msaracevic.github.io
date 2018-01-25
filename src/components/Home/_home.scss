@@ -98,3 +98,27 @@
     font-size: inherit;
   }
 }
+
+
+.project {
+  &__title {
+    &:after {
+      display: block;
+      content: attr(data-subline);
+      @extend .disclaimer;
+      font-size: small;
+      font-weight: normal;
+      padding-left: 0.1rem;
+    }
+  }
+  &__item {
+    margin-top: 1.5rem;
+    @include media-breakpoint-up(md) {
+      // work__icon width + work__info left padding
+      padding-left: calc(48px + 0.5rem);
+    }
+  }
+  &__link {
+    font-size: smaller;
+  }
+}
