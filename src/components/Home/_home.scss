@@ -1,27 +1,43 @@
-.personal {
+.home {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid gray;
-  &__image {
-    @include flex-grid(20%, 20%, 20%);
-    margin: 0.8rem 0 0;
-    position: relative;
-    text-align: center;
-    img {
-      border-radius: 3px;
-      box-shadow: 1px 1px 3px #aaa;
-      max-width: 200px;
+  &__personal {
+    @include flex-grid(100%, 100%, 30%);
+    @include media-breakpoint-up(lg) {
+      order: 2;
     }
   }
-  &__info {
-    @include flex-grid(80%, 80%, 80%);
-    padding-left: 1rem;
+  &__work {
+    @include flex-grid(100%, 100%, 70%);
+    @include media-breakpoint-up(lg) {
+      padding-right: 7rem;
+    }
+  }
+}
+
+.personal {
+  margin: 0 0 2rem;
+  @include media-breakpoint-up(lg) {
+    padding: 0 2rem;
+  }
+  &__image {
+    display: none;
+    margin: 0 auto 2rem;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px #aaa;
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
+  }
+  &__name {
+    display: block;
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
   }
   &__status {
     &--active {
       color: green;
-      font-weight: bold;
     }
     &--inactive {
       color: gray
@@ -33,7 +49,7 @@
   &__contact {
     display: inline-flex;
     align-items: center;
-    margin-right: 1rem;
+    margin: 0.5rem 1rem 0.5rem 0;
   }
   &__contact-image {
     width: 24px;
@@ -43,19 +59,42 @@
 }
 
 .work {
-  padding: 1rem 0 0 1rem;
   &__item {
-    @extend .long-text;
-    padding: 0 0 1rem;
+    display: flex;
+    margin-bottom: 1.5rem;
     &:first-of-type {
+      margin-top: 1.5rem;
+    }
+  }
+  &__icon {
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: block;
+      flex: 0 0 48px;
       padding-top: 0.5rem;
     }
+  }
+  &__info {
     @include media-breakpoint-up(md) {
-      padding: 0.5rem 0 1rem 1rem;
+      padding-left: 0.5rem;
     }
   }
   &__title {
-    margin-bottom: 0;
-    font-weight: normal;
+    margin: 0;
+    font-weight: bold;
+  }
+  &__company {
+    margin: 0;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+  &__duration {
+    @extend .disclaimer;
+  }
+  &__tech {
+    @extend .disclaimer;
+    font-size: inherit;
   }
 }

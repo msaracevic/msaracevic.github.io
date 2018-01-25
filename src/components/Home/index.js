@@ -11,86 +11,76 @@ export default class Home extends Component {
   workItem(type) {
     return this.state[type].map((item, index) => (
       <section key={index} className="work__item">
-        <h5 className="work__title">
-          <span className="bold">{item.company}</span>, {item.location} - {item.position}
-        </h5>
-        <p className="disclaimer">
-          From {item.start} to {item.end} ({duration(item.start, item.end)})
-        </p>
-        <p>Responsibilities: {item.responsibilities}</p>
-        <p>Technologies and tools used: {item.technologies}</p>
+        <div className="work__icon">
+          <img src={item.image} alt={item.company}/>
+        </div>
+        <div className="work__info">
+          <h5 className="work__title">{item.position}</h5>
+          <h6 className="work__company">{item.company}, {item.location}</h6>
+          <p className="work__duration">
+            From {item.start} to {item.end} ({duration(item.start, item.end)})
+          </p>
+          <p>{item.responsibilities}</p>
+          <p className="work__tech">Tech stack: {item.technologies}</p>
+        </div>
       </section>
     ));
   }
 
-  static tagline() {
-    return (
-      <p className="personal__tagline">
-        I am web developer and I've been working in Berlin since 2014. During that time I've worked in several companies and was exposed to several technologies. If you wish to contact me, please add me on LinkedIn.
-      </p>
-    );
-  }
-
   availability() {
+    const available = this.state.available;
     return (
-      <p>
-        <span className="bold">Currently </span>
-        {this.state.available ? (
-          <span className="personal__status personal__status--active">
-            looking for offers
-          </span>
-        ) : (
-          <span className="personal__status personal__status--inactive">
-            not looking for offers
-          </span>
-        )}
+      <p className="bold">
+        <span>Currently </span>
+        <span className={`personal__status personal__status--${available ? 'active' : 'inactive'}`}>
+         {available ? 'looking for offers' : 'not looking for offers'}
+        </span>
       </p>
     );
   }
 
-  static contact() {
-    return (
-      <p>
-        <a href="https://www.linkedin.com/in/mirsarace" className="personal__contact">
-          <span className="personal__contact-image">
-            <img src="/images/linkedin.png" alt="linkedin"/>
-          </span>
-          <span className="personal__contact-label">LinkedIn</span>
-        </a>
-        <a href="https://github.com/msaracevic" className="personal__contact">
-          <span className="personal__contact-image">
-            <img src="/images/github.png" alt="github"/>
-          </span>
-          <span className="personal__contact-label">GitHub</span>
-        </a>
-      </p>
-    );
+  contact() {
+    return this.state.contact.map(item => (
+      <a href={item.url} key={item.url} className="personal__contact">
+        <span className="personal__contact-image">
+          <img src={item.image} alt={item.label}/>
+        </span>
+        <span className="personal__contact-label">{item.label}</span>
+      </a>
+    ));
   }
 
   personal() {
     return (
-      <section className="personal">
-        <section className="personal__image">
-          <img src="/images/personal.jpg" alt="personal"/>
-        </section>
-        <section className="personal__info">
-          <h1>Miroslav Saračević</h1>
-          {Home.tagline()}
-          {this.availability()}
-          {Home.contact()}
-        </section>
-      </section>
+      <article className="personal home__personal">
+        <img className="personal__image" src="/images/personal.jpg" alt="personal"/>
+        <h1 className="personal__name">Miroslav Saračević</h1>
+        <p className="personal__tagline">
+          I am web developer and I've been working in Berlin since 2014.
+          During that time I've worked in several companies and was exposed to
+          several technologies. If you wish to contact me,please add me on
+          LinkedIn.
+        </p>
+        {this.availability()}
+        {this.contact()}
+      </article>
+    );
+  }
+
+  work() {
+    return (
+      <article className="work home__work">
+        <h2>Work experience</h2>
+        {this.workItem('professional')}
+      </article>
     );
   }
 
   render() {
     return (
-      <article>
+      <article className="home">
         {this.personal()}
-        <article className="work">
-          <h3>Work experience</h3>
-          {this.workItem('professional')}
-        </article>
+        {this.work()}
       </article>
     );
   }

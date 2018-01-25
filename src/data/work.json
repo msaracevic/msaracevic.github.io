@@ -1,10 +1,23 @@
 {
   "available": true,
+  "contact": [
+    {
+      "url": "https://www.linkedin.com/in/mirsarace",
+      "image": "/images/linkedin.png",
+      "label": "LinkedIn"
+    },
+    {
+      "url": "https://github.com/msaracevic",
+      "image": "/images/github.png",
+      "label": "GitHub"
+    }
+  ],
   "professional": [
     {
       "company": "Circle Products GmbH",
       "start": "October 2015",
       "end": "Present",
+      "image": "/images/coffee-circle.jpg",
       "position": "Frontend Developer",
       "location": "Berlin",
       "responsibilities": "Working on several projects: Cafe Royal, Delizio and Cremesso. We developed frontend solution running on top of Shopware. Also developed some in house tools.",
@@ -14,15 +27,17 @@
       "company": "Task36 GmbH",
       "start": "February 2015",
       "end": "September 2015",
+      "image": "/images/task-36.png",
       "position": "Junior Frontend Developer",
       "location": "Berlin",
-      "responsibilities": "during my time in Task 36 I was involved in improving UI for a single page application. Most of my work was focused on creating fast Gantt charts (SVG based) and creating new onboarding wizard, as well as improving CSS styles and optimizing performance.",
+      "responsibilities": "During my time in Task 36 I was involved in improving UI for a single page application. Most of my work was focused on creating fast Gantt charts (SVG based) and creating new onboarding wizard, as well as improving CSS styles and optimizing performance.",
       "technologies": "JavaScript, jQuery, LESS/CSS, BEM, git."
     },
     {
       "company": "Cowboy Venture UG",
       "start": "June 2014",
       "end": "December 2014",
+      "image": "/images/selftrack-io.jpeg",
       "position": "Intern Frontend Developer",
       "location": "Berlin",
       "responsibilities": "During the internship I have worked on SelfTrackIO and Quiary. I was working in team with a backend developer and we developed new application to track data about personal health.",
