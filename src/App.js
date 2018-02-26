@@ -5,7 +5,8 @@ import Header from './components/ux/Header';
 import Footer from './components/ux/Footer';
 
 import Home from './components/Home';
-import Resources from './components/Resources/';
+import Guides from './components/Guides';
+import Resources from './components/Resources';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <Header/>
         <main className="page-content-main">
           <Route exact path='/' component={Home}/>
+          <Route exact path='/guides' component={Guides}/>
           <Route exact path='/resources' component={Resources}/>
         </main>
         <Footer/>

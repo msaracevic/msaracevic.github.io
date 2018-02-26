@@ -9,7 +9,7 @@ export default class Header extends Component {
     };
     this.showMobile = this.showMobile.bind(this);
   }
-  
+
   showMobile() {
     this.setState({
       visibleMobile: !this.state.visibleMobile
@@ -24,6 +24,9 @@ export default class Header extends Component {
           <div className="navigation__title"><a href="/">Miroslav Saračević</a>
           </div>
           <ul className="navigation__content">
+            <li className="navigation__link">
+              <Link to="/guides" onClick={this.showMobile}>Guides</Link>
+            </li>
             <li className="navigation__link">
               <Link to="/resources" onClick={this.showMobile}>Resources</Link>
             </li>

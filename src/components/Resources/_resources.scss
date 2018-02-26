@@ -1,70 +1,22 @@
-.resource {
-  border-bottom: 1px solid gray;
-  padding: 1rem 1rem 0.5rem;
-  h4 {
-    margin: 0 0 0.3rem;
+.favorites {
+  margin-bottom: 1rem;
+  display: flex;
+  &__user {
+    padding-top: 0.3rem;
+    flex: 0 0 36px;
   }
-  &:first-of-type {
-    padding-top: 2rem;
+  &__content {
+    flex: 0 1 auto;
+    padding-left: 1rem;
   }
-  &:last-of-type {
-    border-bottom: none;
-    padding-bottom: 0;
+  &__details {
+    font-size: smaller;
+    margin-bottom: 0;
+    opacity: 0.7;
   }
-}
-
-.resource__gist {
-  padding: 0 0 1rem;
-  &--hidden {
-    display: none;
-  }
-}
-
-.gist {
-  padding: 0 2%;
-  h1, h2 {
-    margin: 0.3rem 0;
-  }
-  h3 {
-    margin: 0.2rem;
-    font-weight: bold;
-  }
-  h4, h5, h6 {
-    margin: 0.2rem;
-    font-weight: bold;
-  }
-  ul {
-    list-style: initial;
-    margin: initial;
-    padding: 0 0 0 1rem;
-  }
-  li {
-    list-style: disc;
-    display: list-item;
-  }
-  ul li ul li {
-    list-style: circle;
-  }
-  ul li ul li ul li {
-    list-style: square;
-  }
-  code {
-    padding: 0.2em 0.4em;
-    margin: 0;
-    font-size: 85%;
-    background-color: rgba(27,31,35,0.05);
-    border-radius: 3px;
-  }
-  pre {
-    background-color: rgba(27,31,35,0.05);
-    padding: 0.2em 0.4em;
-    overflow: auto;
-    code {
-      background-color: transparent;
-      padding: 0;
-    }
-  }
-  a:visited {
-    color: #0000EE;
+  &__tag {
+    margin: 0 0.3rem;
+    padding: 0.1rem 0.3rem;
+    background-color: rgba(#D0D0D0, 0.6);
   }
 }

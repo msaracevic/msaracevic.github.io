@@ -1,77 +1,78 @@
 import React, {Component} from 'react';
-import ReactMarkdown from 'react-markdown';
 
-import resources from '../../data/resources.json';
+const apiVersion   = '2.2',
+      apiBase      = 'https://api.stackexchange.com',
+      userId       = 3963682,
+      favoritesUrl = `${apiBase}/${apiVersion}/users/${userId}/favorites?order=desc&sort=activity&site=stackoverflow`,
+      questionsUrl = `${apiBase}/${apiVersion}/users/${userId}/questions?order=desc&sort=activity&site=stackoverflow`;
 
 export default class Resources extends Component {
   constructor(props) {
     super(props);
-    this.state = resources;
-
-    this.toggleVisibility       = this.toggleVisibility.bind(this);
-    this.toggleVisibilityButton = this.toggleVisibilityButton.bind(this);
+    this.state = {
+      favorites: {
+        items: []
+      },
+      questions:  {
+        items: []
+      }
+    };
   };
 
-  fillGistResponseData(key, response) {
-    let updated = Object.assign({}, this.state[key]);
-
-    updated.visible = false;
-    updated.content = ReactMarkdown({
-      source:    response,
-      className: 'gist'
-    });
-    this.setState({[key]: updated});
-  }
-
   componentWillMount() {
-    Object.keys(this.state).forEach(key => {
-      if (this.state[key].gist) {
-        fetch(this.state[key].url, {'Content-Type': 'text/html'})
-          .then(response => response.text())
-          .then(response => this.fillGistResponseData(key, response));
-      }
-    });
+    fetch(favoritesUrl)
+      .then(response => response.json())
+      .then(response => this.setState({
+        favorites: response
+      }));
+    fetch(questionsUrl)
+      .then(response => response.json())
+      .then(response => this.setState({
+        questions: response
+      }));
+  };
+
+  static decodeHtmlEntity(entity) {
+    const txt     = document.createElement('textarea');
+    txt.innerHTML = entity;
+    return txt.value;
   }
 
-  toggleVisibility(key) {
-    let node = Object.assign({}, this.state[key]);
-
-    node.visible = !node.visible;
-    this.setState({[key]: node});
-  }
-
-  toggleVisibilityButton(key, visible) {
-    return (
-      <button className="btn btn--link btn--small" onClick={() => this.toggleVisibility(key)}>
-        {(visible ? '(Show less...)' : '(Show more...)')}
-      </button>
-    );
-  }
-
-  gistResource(key) {
-    const item = this.state[key];
-    return (
-      <article className="resource" key={key}>
-        <h4>{item.title}</h4>
-        <p>
-          {item.description}
-          {this.toggleVisibilityButton(key, item.visible)}
-        </p>
-        <section className={'resource__gist ' + (item.visible ? '' : 'resource__gist--hidden')}>
-          {item.content ? item.content : ''}
+  itemRender(items) {
+    return items.map(item => {
+      return (
+        <section className="favorites" key={item.question_id}>
+          <div className="favorites__user">
+            <img src={item.owner.profile_image} alt="owner"/>
+          </div>
+          <div className="favorites__content">
+            <a href={item.link}>{Resources.decodeHtmlEntity(item.title)}</a>
+            <p className="favorites__details">
+              Viewed {item.view_count.toLocaleString('de-DE')} times
+              {item.is_answered ? ', answered' : ', no answer'}
+            </p>
+            <p className="favorites__details">
+              Question score is {item.score.toLocaleString('de-DE')}
+            </p>
+            <p className="favorites__details">
+              Tags: {
+              item.tags.map((tag, index) => (
+                <span key={index} className="favorites__tag">{tag}</span>
+              ))}
+            </p>
+          </div>
         </section>
-      </article>
-    );
+      );
+    });
   }
 
   render() {
     return (
       <article className="resources">
-        <h1>Useful resources</h1>
-        {Object.keys(this.state).map(key => {
-          if (this.state[key].gist) return this.gistResource(key);
-          else return (<span>This type of resource is not defined</span>);
-        })}
+        <h3>Favorites on stack overflow</h3>
+        {this.itemRender(this.state.favorites.items)}
+        <h3>My questions on stack overflow</h3>
+        {this.itemRender(this.state.questions.items)}
       </article>
     );
   }
