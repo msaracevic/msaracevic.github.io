@@ -43,7 +43,7 @@ export default class Guides extends Component {
   toggleVisibilityButton(key, visible) {
     return (
       <button className="btn btn--link btn--small" onClick={() => this.toggleVisibility(key)}>
-        {(visible ? '(Show less...)' : '(Show more...)')}
+        {visible ? '(Show less...)' : '(Show more...)'}
       </button>
     );
   }

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import StackOverflow from './StackOverflow';
 
 const apiVersion   = '2.2',
       apiBase      = 'https://api.stackexchange.com',
@@ -11,68 +12,29 @@ export default class Resources extends Component {
     super(props);
     this.state = {
       favorites: {
+        url:   favoritesUrl,
         items: []
       },
-      questions:  {
+      questions: {
+        url:   questionsUrl,
         items: []
       }
     };
   };
 
   componentWillMount() {
-    fetch(favoritesUrl)
-      .then(response => response.json())
-      .then(response => this.setState({
-        favorites: response
-      }));
-    fetch(questionsUrl)
-      .then(response => response.json())
-      .then(response => this.setState({
-        questions: response
-      }));
-  };
-
-  static decodeHtmlEntity(entity) {
-    const txt     = document.createElement('textarea');
-    txt.innerHTML = entity;
-    return txt.value;
-  }
-
-  itemRender(items) {
-    return items.map(item => {
-      return (
-        <section className="favorites" key={item.question_id}>
-          <div className="favorites__user">
-            <img src={item.owner.profile_image} alt="owner"/>
-          </div>
-          <div className="favorites__content">
-            <a href={item.link}>{Resources.decodeHtmlEntity(item.title)}</a>
-            <p className="favorites__details">
-              Viewed {item.view_count.toLocaleString('de-DE')} times
-              {item.is_answered ? ', answered' : ', no answer'}
-            </p>
-            <p className="favorites__details">
-              Question score is {item.score.toLocaleString('de-DE')}
-            </p>
-            <p className="favorites__details">
-              Tags: {
-              item.tags.map((tag, index) => (
-                <span key={index} className="favorites__tag">{tag}</span>
-              ))}
-            </p>
-          </div>
-        </section>
-      );
+    Object.keys(this.state).forEach(key => {
+      fetch(this.state[key].url)
+        .then(response => response.json())
+        .then(response => this.setState({[key]: response}));
     });
-  }
+  };
 
   render() {
     return (
       <article className="resources">
-        <h3>Favorites on stack overflow</h3>
-        {this.itemRender(this.state.favorites.items)}
-        <h3>My questions on stack overflow</h3>
-        {this.itemRender(this.state.questions.items)}
+        <StackOverflow className="resource" title="Favorites on stack overflow" items={this.state.favorites.items}/>
+        <StackOverflow className="resource" title="Questions on stack overflow" items={this.state.questions.items}/>
       </article>
     );
   }

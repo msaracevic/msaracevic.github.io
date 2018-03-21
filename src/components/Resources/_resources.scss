@@ -1,4 +1,17 @@
-.favorites {
+.resources {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.resource {
+  flex: 0 0 100%;
+  @include media-breakpoint-up(lg) {
+    flex: 0 0 48%;
+  }
+}
+
+.so-item{
   margin-bottom: 1rem;
   display: flex;
   &__user {
