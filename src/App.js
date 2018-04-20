@@ -4,7 +4,7 @@ import {Route} from 'react-router-dom';
 import Header from './components/ux/Header';
 import Footer from './components/ux/Footer';
 
-import Home from './components/Home';
+import About from './components/About';
 import Guides from './components/Guides';
 import Resources from './components/Resources';
 
@@ -14,8 +14,8 @@ class App extends Component {
       <div className="App">
         <Header/>
         <main className="page-content-main">
-          <Route exact path='/' component={Home}/>
-          <Route exact path='/guides' component={Guides}/>
+          <Route exact path='/' component={Guides}/>
+          <Route exact path='/about' component={About}/>
           <Route exact path='/resources' component={Resources}/>
         </main>
         <Footer/>

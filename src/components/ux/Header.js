@@ -25,10 +25,10 @@ export default class Header extends Component {
           </div>
           <ul className="navigation__content">
             <li className="navigation__link">
-              <Link to="/guides" onClick={this.showMobile}>Guides</Link>
+              <Link to="/resources" onClick={this.showMobile}>Resources</Link>
             </li>
             <li className="navigation__link">
-              <Link to="/resources" onClick={this.showMobile}>Resources</Link>
+              <Link to="/about" onClick={this.showMobile}>About</Link>
             </li>
           </ul>
         </nav>
