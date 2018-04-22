@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 export default class Header extends Component {
   constructor(props) {
@@ -8,6 +8,7 @@ export default class Header extends Component {
       visibleMobile: false
     };
     this.showMobile = this.showMobile.bind(this);
+    this.closeMobile = this.closeMobile.bind(this);
   }
 
   showMobile() {
@@ -16,19 +17,27 @@ export default class Header extends Component {
     });
   }
 
+  closeMobile() {
+    this.setState({
+      visibleMobile: false
+    });
+  }
+  
   render() {
     return (
       <header className="page-content-header">
         <nav className={'navigation ' + (this.state.visibleMobile ? 'navigation--visible' : '')}>
           <span className="navigation__mobile" onClick={this.showMobile}></span>
-          <div className="navigation__title"><a href="/">Miroslav Saračević</a>
-          </div>
+          <div className="navigation__title"><NavLink to="/">msaracevic.github.io</NavLink></div>
           <ul className="navigation__content">
             <li className="navigation__link">
-              <Link to="/resources" onClick={this.showMobile}>Resources</Link>
+              <NavLink exact activeClassName="navigation__link-active" to="/" onClick={this.closeMobile}>Guides</NavLink>
             </li>
             <li className="navigation__link">
-              <Link to="/about" onClick={this.showMobile}>About</Link>
+              <NavLink activeClassName="navigation__link-active" to="/resources" onClick={this.closeMobile}>Resources</NavLink>
+            </li>
+            <li className="navigation__link">
+              <NavLink activeClassName="navigation__link-active"  to="/about" onClick={this.closeMobile}>About</NavLink>
             </li>
           </ul>
         </nav>

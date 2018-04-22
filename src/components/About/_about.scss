@@ -1,40 +1,28 @@
-.home {
+.about {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
+  margin-top: 1rem;
   &__personal {
-    @include flex-grid(100%, 100%, 30%);
-    @include media-breakpoint-up(lg) {
-      order: 2;
-    }
+    @include flex-grid(100%, 280px, 280px);
   }
   &__work {
-    @include flex-grid(100%, 100%, 70%);
-    @include media-breakpoint-up(lg) {
-      padding-right: 7rem;
-    }
+    @include flex-grid(100%, calc(100% - 330px), calc(100% - 330px));
   }
 }
 
 .personal {
-  margin: 0 0 2rem;
-  @include media-breakpoint-up(lg) {
-    padding: 0 2rem;
-  }
   &__image {
     display: none;
-    margin: 0 auto 2rem;
-    border-radius: 3px;
-    box-shadow: 1px 1px 3px #aaa;
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       display: block;
     }
   }
-  &__name {
-    display: block;
-    @include media-breakpoint-up(lg) {
-      display: none;
-    }
+
+  &__tagline {
+    @extend .long-text;
   }
+
   &__status {
     &--active {
       color: green;
@@ -43,9 +31,7 @@
       color: gray
     }
   }
-  &__tagline {
-    @extend .long-text;
-  }
+
   &__contact {
     display: inline-flex;
     align-items: center;
@@ -59,36 +45,35 @@
 }
 
 .work {
+  margin-top: 2rem;
+  @include media-breakpoint-up(md) {
+    margin-top: 0;
+  }
   &__item {
-    display: flex;
-    margin-bottom: 1.5rem;
-    &:first-of-type {
-      margin-top: 1.5rem;
-    }
-  }
-  &__icon {
-    display: none;
-    @include media-breakpoint-up(md) {
-      display: block;
-      flex: 0 0 48px;
-      padding-top: 0.5rem;
-    }
-  }
-  &__info {
-    @include media-breakpoint-up(md) {
-      padding-left: 0.5rem;
-    }
-  }
-  &__title {
-    margin: 0;
-    font-weight: bold;
-  }
-  &__company {
-    margin: 0;
+    margin: 0 0 2rem;
   }
   &__header {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+  }
+  &__image {
+    display: none;
+    @include media-breakpoint-up(sm) {
+      display: block;
+      flex: 0 0 48px;
+    }
+  }
+  &__company-info {
+    flex: 0 0 100%;
+    @include media-breakpoint-up(sm) {
+      flex: 0 0 calc(100% - 60px);
+    }
+  }
+  &__title {
+    margin: 0 0 0.1rem;
+  }
+  &__info {
+    @extend .long-text;
   }
   &__duration {
     @extend .disclaimer;
@@ -99,26 +84,22 @@
   }
 }
 
-
-.project {
+.projects {
+  @include media-breakpoint-up(md) {
+    margin-top: 3rem;
+  }
   &__title {
-    &:after {
-      display: block;
-      content: attr(data-subline);
-      @extend .disclaimer;
-      font-size: small;
-      font-weight: normal;
-      padding-left: 0.1rem;
-    }
+    margin: 0 0 0.1rem;
   }
   &__item {
-    margin-top: 1.5rem;
-    @include media-breakpoint-up(md) {
-      // work__icon width + work__info left padding
-      padding-left: calc(48px + 0.5rem);
-    }
+    margin: 1rem 0;
+    @extend .long-text;
   }
-  &__link {
-    font-size: smaller;
+  &__title {
+    margin: 0 0 0.1rem;
+  }
+  &__tech {
+    @extend .disclaimer;
+    font-size: inherit;
   }
 }

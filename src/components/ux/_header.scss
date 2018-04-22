@@ -16,7 +16,7 @@
 
   .navigation__title {
     font-size: $base-font-size-larger;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     a {
       color: $navbar-color-hover !important;
     }
@@ -40,6 +40,11 @@
   .navigation__link {
     padding: 0 $base-padding-h;
     display: block;
+  }
+
+  .navigation__link-active {
+    color: white !important;
+    cursor: default;
   }
 
   .navigation__mobile {

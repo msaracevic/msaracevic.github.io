@@ -1,3 +1,25 @@
+.gist-data {
+  padding: 1rem;
+  table tbody tr:nth-of-type(even) {
+    background-color: transparent;
+  }
+  ul {
+    list-style: initial;
+    font-size: 14px;
+  }
+  ul ul {
+    list-style: circle;
+  }
+  .markdown-body li+li {
+    margin-top: 0 !important;
+  }
+}
+
+.gist {
+  margin-top: 1rem;
+}
+
+
 .guide {
   padding: 1rem 1rem 0.5rem;
   h4 {
@@ -20,7 +42,7 @@
   }
 }
 
-.gist {
+.gist-raw {
   padding: 0 2%;
   h1, h2 {
     margin: 0.3rem 0;
