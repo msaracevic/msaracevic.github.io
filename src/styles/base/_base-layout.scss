@@ -97,3 +97,9 @@ table {
 .box__value {
   @include box__value;
 }
+
+ul {
+  padding-left: 2rem;
+  list-style: circle;
+  margin: 0.5em 0;
+}

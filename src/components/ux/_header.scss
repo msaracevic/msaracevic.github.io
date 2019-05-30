@@ -27,6 +27,7 @@
 
   .navigation__content {
     display: none;
+    margin: 0;
     @include absolute($navbar-height, 0, auto, 0);
     @include media-breakpoint-up($navbar-breakpoint) {
       display: flex;

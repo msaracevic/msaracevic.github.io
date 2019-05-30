@@ -19,7 +19,8 @@ const renderWorkItems = (type) => (
           </div>
         </header>
         <div className="work__info">
-          <p>{item.responsibilities}</p>
+          {item.description && <p>{item.description}</p>}
+          {item.responsibilities && <ul>{item.responsibilities.map((responsibility, index) => <li key={index}>{responsibility}</li>)}</ul>}
           <p className="work__tech">Tech stack: {item.technologies}</p>
         </div>
       </section>
@@ -33,7 +34,7 @@ const renderProjectItems = (type) => (
       <section key={index} className="projects__item">
         <h5 className="projects__title bold">{item.project}</h5>
         <h6 className="projects__title project__link">
-          <a href={item.url} target="_blank">Link to project</a> <span className="disclaimer">(opens in new tab)</span>
+          <a href={item.url} target="_blank" rel="noopener noreferrer">Link to project</a>
         </h6>
         <p>{item.description}</p>
         <p className="projects__tech">Tech stack: {item.technologies}</p>
@@ -65,10 +66,10 @@ const renderPersonal = (available, contact) => (
   <section className="about__personal personal">
     <div className="personal__image"><img src="/images/personal.jpg" alt="personal"/></div>
     <h1 className="personal__name">Miroslav Saračević</h1>
-    <p className="personal__tagline">
-      I am web developer and I've been working in Berlin since 2014. During that time I've worked in several companies
-      and was exposed to several technologies. If you wish to contact me, please add me on LinkedIn.
-    </p>
+    <div className="personal__tagline">
+      <p>I am web focused software developer. Since 2014 I've worked in Berlin in several companies and was exposed to several technologies.</p>
+      <p>Currently I am mostly enjoying using React and Node.js to create web applications (coupled with usual suspects like HTML5 and SASS/CSS3).</p>
+    </div>
     {renderAvailability(available)}
     {contact.map(contact => renderContact(contact))}
   </section>

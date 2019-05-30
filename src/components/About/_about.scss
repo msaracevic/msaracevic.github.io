@@ -3,9 +3,11 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 1rem;
+
   &__personal {
     @include flex-grid(100%, 280px, 280px);
   }
+
   &__work {
     @include flex-grid(100%, calc(100% - 330px), calc(100% - 330px));
   }
@@ -14,6 +16,12 @@
 .personal {
   &__image {
     display: none;
+
+    img {
+      border-radius: 5px;
+      box-shadow: 0 0 1px 1px #666;
+    }
+
     @include media-breakpoint-up(md) {
       display: block;
     }
@@ -21,12 +29,14 @@
 
   &__tagline {
     @extend .long-text;
+    margin: 0.5rem 0 0.7rem;
   }
 
   &__status {
     &--active {
       color: green;
     }
+
     &--inactive {
       color: gray
     }
@@ -37,10 +47,14 @@
     align-items: center;
     margin: 0.5rem 1rem 0.5rem 0;
   }
+
   &__contact-image {
     width: 24px;
     height: 24px;
-    margin-right: 0.3rem;
+  }
+
+  &__contact-label {
+    padding: 0 0.3em;
   }
 }
 
@@ -49,13 +63,16 @@
   @include media-breakpoint-up(md) {
     margin-top: 0;
   }
+
   &__item {
     margin: 0 0 2rem;
   }
+
   &__header {
     display: flex;
     justify-content: space-between;
   }
+
   &__image {
     display: none;
     @include media-breakpoint-up(sm) {
@@ -63,21 +80,26 @@
       flex: 0 0 48px;
     }
   }
+
   &__company-info {
     flex: 0 0 100%;
     @include media-breakpoint-up(sm) {
       flex: 0 0 calc(100% - 60px);
     }
   }
+
   &__title {
     margin: 0 0 0.1rem;
   }
+
   &__info {
     @extend .long-text;
   }
+
   &__duration {
     @extend .disclaimer;
   }
+
   &__tech {
     @extend .disclaimer;
     font-size: inherit;
@@ -88,16 +110,20 @@
   @include media-breakpoint-up(md) {
     margin-top: 3rem;
   }
+
   &__title {
     margin: 0 0 0.1rem;
   }
+
   &__item {
     margin: 1rem 0;
     @extend .long-text;
   }
+
   &__title {
     margin: 0 0 0.1rem;
   }
+
   &__tech {
     @extend .disclaimer;
     font-size: inherit;

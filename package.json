@@ -4,14 +4,14 @@
   "private": true,
   "dependencies": {
     "moment": "^2.20.1",
-    "node-sass-chokidar": "0.0.3",
+    "node-sass": "^4.12.0",
     "npm-run-all": "^4.0.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-embed-gist": "^1.0.0",
     "react-markdown": "^3.1.4",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.0"
+    "react-scripts": "^3.0.1"
   },
   "author": "Miroslav Saracevic",
   "license": "MIT",
@@ -22,13 +22,25 @@
     "build": "npm run build-css-production && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "build-css-production": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o public/ --output-style compressed",
-    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o public/",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o public/ --watch --recursive",
+    "build-css-production": "node-sass --include-path ./src --include-path ./node_modules src/ -o public/ --output-style compressed",
+    "build-css": "node-sass --include-path ./src --include-path ./node_modules src/ -o public/",
+    "watch-css": "npm run build-css && node-sass --include-path ./src --include-path ./node_modules src/ -o public/ --watch --recursive",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -b master -m Release"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0"
+    "gh-pages": "^2.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -31,13 +31,10 @@ export default class Header extends Component {
           <div className="navigation__title"><NavLink to="/">msaracevic.github.io</NavLink></div>
           <ul className="navigation__content">
             <li className="navigation__link">
-              <NavLink exact activeClassName="navigation__link-active" to="/" onClick={this.closeMobile}>Guides</NavLink>
+              <NavLink exact activeClassName="navigation__link-active" to="/Guides" onClick={this.closeMobile}>Guides</NavLink>
             </li>
             <li className="navigation__link">
               <NavLink activeClassName="navigation__link-active" to="/resources" onClick={this.closeMobile}>Resources</NavLink>
-            </li>
-            <li className="navigation__link">
-              <NavLink activeClassName="navigation__link-active"  to="/about" onClick={this.closeMobile}>About</NavLink>
             </li>
           </ul>
         </nav>

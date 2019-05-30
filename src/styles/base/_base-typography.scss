@@ -74,8 +74,6 @@ a:visited {
 
 main {
   a:hover {
-    color: black !important;
-    position: relative;
-    background: linear-gradient(270deg, yellow -100%, transparent 100%);
+    text-decoration: underline;
   }
 }
