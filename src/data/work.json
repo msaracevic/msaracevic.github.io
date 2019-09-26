@@ -1,5 +1,5 @@
 {
-  "available": true,
+  "available": false,
   "contact": [
     {
       "url": "https://www.linkedin.com/in/mirsarace",
@@ -13,6 +13,19 @@
     }
   ],
   "professional": [
+    {
+      "company": "Billie GmbH",
+      "start": "September 2019",
+      "end": "Present",
+      "image": "/images/billie.png",
+      "position": "Senior Frontend Engineer",
+      "location": "Berlin",
+      "description": "Billie is a breakthrough Fintech startup in Berlin that aims to revolutionize small business financing.",
+      "responsibilities": [
+        "Working on frontend for one of our products"
+      ],
+      "technologies": "React.js, 'React-redux.js', SASS/CSS, npm, git."
+    },
     {
       "company": "Formation",
       "start": "May 2017",
