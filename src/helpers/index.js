@@ -6,14 +6,20 @@ export function duration(start, end) {
   let result;
 
   if (duration > 12) {
-    const years  = Math.floor(duration / 12),
-          months = duration - (years * 12);
+    const years = Math.floor(duration / 12);
+    const months = duration - (years * 12);
 
-    result = `${years} ${years === 1 ? 'year' : 'years' } 
-              and ${months} ${months === 1 ? 'month' : 'months' }`;
+    result = `${years} ${years === 1 ? 'year' : 'years'} 
+              and ${months} ${months === 1 ? 'month' : 'months'}`;
   } else {
     result = `${duration} ${duration === 1 ? 'month' : 'months'}`;
   }
 
   return result;
+}
+
+export function decodeHtmlEntity(entity) {
+  const txt = document.createElement('textarea');
+  txt.innerHTML = entity;
+  return txt.value;
 }

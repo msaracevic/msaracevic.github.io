@@ -1,20 +1,7 @@
 @import "reset";
 @import "variables";
-
 @import "mixins/breakpoints";
-@import "mixins/grid";
-
 @import "vendor/press/press.scss";
-
-@import "base/base-layout";
-@import "base/base-ui-messages";
-@import "base/base-typography";
-@import "base/base-buttons";
-@import "base/tabs";
-
-@import "../components/ux/header";
-@import "../components/ux/footer";
-@import "../components/ux/loading-screen";
-@import "../components/About/about";
-@import "../components/Guides/guides";
-@import "../components/Resources/resources";
+@import "base-layout";
+@import "base-typography";
+@import "base-buttons";

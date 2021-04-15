@@ -1,0 +1,58 @@
+@import "../../styles/variables";
+@import "../../styles/mixins/breakpoints";
+
+.navigation {
+  padding: 0 $base-padding-h;
+  margin: 0 auto;
+  max-width: 1000px;
+
+  &--white {
+    background: white;
+  }
+
+  &__content {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    position: static;
+    flex: 1 1 auto;
+    padding: 2rem 0;
+    justify-content: center;
+
+    @include media-breakpoint-up(md) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__link {
+    padding: 0 $base-padding-h;
+    display: block;
+  }
+
+  &__active {
+    color: black !important;
+    border-bottom: 1px solid black;
+    cursor: default;
+  }
+
+  &__name {
+    display: none;
+    margin-right: auto;
+    font-weight: bold;
+    font-size: larger;
+    pointer-events: none;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  a, a:link, a:visited, a:active {
+    color: #555;
+  }
+
+  a:hover {
+    color: #000;
+  }
+}

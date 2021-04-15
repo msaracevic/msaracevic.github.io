@@ -1,0 +1,97 @@
+@import "src/styles/variables";
+@import "src/styles/mixins/breakpoints";
+
+.resources {
+  padding: 1rem;
+  &__item {
+    max-width: 1000px;
+    margin: 2rem auto 5rem;
+
+    &--so {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .title {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+.so-item {
+  margin: 0 0 2rem;
+  flex: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include media-breakpoint-up(md) {
+    flex: 0 1 45%;
+  }
+
+  @include media-breakpoint-up(lg) {
+    flex: 0 1 32%;
+  }
+
+  &__link {
+    flex: 1 1 100%;
+    margin-bottom: 0.3rem;
+    font-size: 13px;
+  }
+
+  &__user {
+    margin: 1rem 0 0;
+    flex: 0 0 36px;
+  }
+
+  &__content {
+    flex: 1 0;
+    padding-left: 1rem;
+  }
+
+  &__details {
+    font-size: smaller;
+    margin: 0 0;
+  }
+
+  &__tag {
+    display: inline-block;
+    margin: 0.2rem 0.3rem 0.2rem 0;
+    padding: 0.1rem 0.3rem;
+    background-color: rgba(#D0D0D0, 0.6);
+  }
+}
+
+.gist {
+  margin-top: 1rem;
+
+  &-file {
+    border: none !important;
+  }
+
+  &-meta {
+    display: none;
+  }
+
+  &-data {
+    padding: 1rem;
+    border: none !important;
+
+    table tbody tr:nth-of-type(even) {
+      background-color: transparent;
+    }
+
+    ul {
+      list-style: initial;
+      font-size: 14px;
+    }
+
+    ul ul {
+      list-style: circle;
+    }
+
+    .markdown-body li + li {
+      margin-top: 0 !important;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "available": false,
+  "available": true,
   "contact": [
     {
       "url": "https://www.linkedin.com/in/mirsarace",
@@ -16,67 +16,76 @@
     {
       "company": "Billie GmbH",
       "start": "September 2019",
-      "end": "Present",
-      "image": "/images/billie.png",
+      "end": "May 2021",
+      "image": "/images/work/billie.png",
+      "appImage": "/images/apps/billie.png",
       "position": "Senior Frontend Engineer",
       "location": "Berlin",
-      "description": "Billie is a breakthrough Fintech startup in Berlin that aims to revolutionize small business financing.",
+      "description": "Fintech startup in Berlin with around <b>100 employees</b> and <b>€30m funding</b> in series B that aims to revolutionize small business financing. As part of Billie team I was involved in creating <b>payment method widget</b> which is used by our B2B clients.",
       "responsibilities": [
-        "Working on frontend for one of our products"
+        "Widget implementation based on our design using React, SASS (BEM)",
+        "Deeply invested in defining and maintaining industry code standards across projects",
+        "Onboarding and mentoring junior developers",
+        "Closely working with other specialists in cross-functional teams"
       ],
-      "technologies": "React.js, 'React-redux.js', SASS/CSS, npm, git."
+      "technologies": "React, React Redux, SASS, npm, git."
     },
     {
-      "company": "Formation",
-      "start": "May 2017",
-      "end": "Present",
-      "image": "/images/formation.png",
+      "company": "Formation (freelance)",
+      "start": "May 2018",
+      "end": "December 2019",
+      "image": "/images/work/formation.png",
+      "appImage": "/images/apps/formation.png",
       "position": "Lead Web Engineer",
       "location": "Berlin",
-      "description": "Formation is a Berlin-based startup developing a new communication and coordination tool for fast moving teams operating in and around large facilities. Formation leverages the earth's magnetic field to find indoor position and seamlessly switches to GPS as users move outdoors.",
+      "description": "Formation is a Berlin startup developing a new communication and coordination tool for teams operating in and around large facilities. The tool leverages the earth's magnetic field to find indoor position and seamlessly switches to GPS as users move outdoors.",
       "responsibilities": [
+        "<b>Delivering first MVP to Berlin Tech Open Air 2018</b> which was available to <b>250 volunteer users on 8 000 square meters</b> area and spread across 3 buildings with multiple floors",
         "Creating and maintaining admin dashboard for managing the system",
         "Creating and maintaining server infrastructure",
-        "Defining tech stack, coding standards and conventions",
-        "Delivering first MVP to Berlin Tech Open Air 2018 which was available to 250 volunteer users on 8 000 square meters area and spread across 3 buildings with multiple floors"
-      ],
-      "technologies": "React.js, Express.js, SASS/CSS, postgres, Realm, npm, git."
+        "Defining tech stack, coding standards and conventions"
+     ],
+      "technologies": "React, Express.js, SASS, postgres, npm, git."
     },
     {
       "company": "Circle Products GmbH",
       "start": "October 2015",
       "end": "August 2019",
-      "image": "/images/coffee-circle.jpg",
+      "image": "/images/work/coffee-circle.jpg",
+      "appImage": "/images/apps/coffee-circle.png",
       "position": "Frontend Developer",
       "location": "Berlin",
-      "description": "Working on several e-commerce projects based on shopware: Cafe Royal, Delizio, Cremesso and Coffee Circle. After 3 years of working for Coffee Circle I became Frontend Team Lead and started introducing more microservices, tooling and developing environment improvements",
+      "description": "Working on several e-commerce projects based on Shopware: Café Royal, Delizio, Cremesso and Coffee Circle. After 3 years of working for Coffee Circle I was single-handedly responsible for frontend and started introducing more microservices, tooling and developing environment improvements. I was also mentoring juniors",
       "responsibilities": [
         "Refactoring Coffee Circle code base to industry standard",
-        "Frontend implementation of design and rewrite of Cafe Royal code base to industry standard",
-        "Development of internal tools based on node.js and react.js",
+        "Frontend implementation of design of Cafe Royal code base to industry standard",
+        "Development of internal tools based on Node.js and React",
         "Decoupling components from Shopware into standalone services",
-        "Updating the developing environment and working on code sharing library"
+        "Updating the developing environment and working on code sharing library",
+        "Mentoring junior developers"
       ],
-      "technologies": "JavaScript, React.js, Node.js, jQuery, Gulp, SASS/CSS, Smarty, Handlebars, npm, git."
+      "technologies": "JavaScript, React, Node.js, SASS, Handlebars, npm, git."
     },
     {
       "company": "Task36 GmbH",
       "start": "February 2015",
       "end": "September 2015",
-      "image": "/images/task-36.png",
+      "image": "/images/work/task-36.png",
+      "appImage": "/images/apps/adaptive.png",
       "position": "Junior Frontend Developer",
       "location": "Berlin",
-      "description": "During my time in Task 36 I was involved in improving UI for a single page application. Most of my work was focused on creating fast Gantt charts (SVG based) and creating new onboarding wizard, as well as improving CSS styles and optimizing performance. When starting the page load times were around 30 seconds mark, after optimizations we went down to sub 2 seconds load time for double the size of displayed data.",
-      "technologies": "JavaScript, jQuery, LESS/CSS, BEM, git."
+      "description": "During my time in Task 36 I was involved in improving UI for a single page application. Most of my work was focused on creating fast Gantt charts (SVG based) and creating new onboarding wizard, as well as improving CSS styles and optimizing performance. Originally <b>load times were around 30 seconds mark, after optimizations we went down to sub 2 seconds load time for double the size of displayed data.</b>",
+      "technologies": "JavaScript, jQuery, LESS, BEM, git."
     },
     {
       "company": "Cowboy Venture UG",
       "start": "June 2014",
       "end": "December 2014",
-      "image": "/images/selftrack-io.jpeg",
+      "image": "/images/work/selftrack-io.jpeg",
+      "appImage": "/images/apps/selftrackio.png",
       "position": "Intern Frontend Developer",
       "location": "Berlin",
-      "description": "During the internship I have worked on SelfTrackIO and Quiary. I was working in team with a backend developer and we developed new application to track data about personal health.",
+      "description": "During the internship I have worked on SelfTrackIO and Quiary. I was working in team with a backend developer and we developed new application to track data about personal health. This was my first employment in web design after university and I was lucky to join startup from day one and see first hand how hard it is to manage business from start.",
       "technologies": "JavaScript, jQuery, D3.js, dimple.js, LESS, Ruby on Rails, git."
     }
   ],
@@ -85,19 +94,13 @@
       "project": "Quantum Anomaly Website",
       "url": "https://quantum-anomaly.herokuapp.com/",
       "description": "Website which was developed for my online gaming hobby. Website visitors can use it as information source and to check various states of games via API. It has started as basic scripts and then extended a bit to be useful to larger audience playing online games",
-      "technologies": "React.js, Node.js, Postgres, SASS/CSS, Webpack, hosted on Heroku"
+      "technologies": "React, Node.js, Postgres, SASS, Webpack, hosted on Heroku"
     },
     {
       "project": "React Embed Gist",
       "url": "https://www.npmjs.com/package/react-embed-gist",
-      "description": "Small npm package which can embed gists on React.js web applications. It was done as part of research how to deploy and maintain npm modules.",
-      "technologies": "React.js, Webpack, published on npm"
-    },
-    {
-      "project": "Personal Website",
-      "url": "https://github.com/msaracevic/msaracevic.github.io/tree/develop",
-      "description": "Source code for this site.",
-      "technologies": "React.js, SASS/CSS, Webpack, hosted on GitHub"
+      "description": "Small npm package which can embed gists on React web applications. It was done as part of research how to deploy and maintain npm modules.",
+      "technologies": "React, Webpack, published on npm"
     }
   ]
 }

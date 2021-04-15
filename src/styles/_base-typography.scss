@@ -38,38 +38,43 @@ h6 {
 }
 
 p {
-  margin-bottom: 0.3rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
 }
 
-.bold {
+b {
   font-weight: bold;
 }
 
-.muted {
-  color: #999;
-}
+.text {
+  &--muted {
+    color: #999;
+  }
 
-.small {
-  font-size: 80%;
-}
+  &--small {
+    font-size: 80%;
+  }
 
-.disclaimer {
-  @extend .muted;
-  @extend .small;
-}
+  &--large {
+    font-size: 110%;
+  }
 
-%ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  &--disclaimer {
+    color: #999;
+    font-size: 80%;
+  }
+
+  &--bold {
+    font-weight: bold;
+  }
 }
 
 a {
   color: #0000EE;
-}
 
-a:visited {
-  color: #0000EE;
+  &:visited {
+    color: #0000EE;
+  }
 }
 
 main {
