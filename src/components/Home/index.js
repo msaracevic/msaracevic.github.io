@@ -67,7 +67,7 @@ const Personal = props => (
       <p className="text--large bold">
         <span>Currently </span>
         <span className={`home__status home__status--${work.available ? 'active' : 'inactive'}`}>
-          {work.available ? 'open for opportunities' : 'not looking for opportunities'}.
+          {work.available ? 'open for opportunities' : 'passively open for opportunities'}.
         </span>
       </p>
     </div>
