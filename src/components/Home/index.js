@@ -1,6 +1,6 @@
 import React from 'react';
 import work from '../../data/work.json';
-import {duration} from '../../helpers/index';
+import { workDuration } from "../../helpers/index";
 import './Home.scss';
 
 const WorkItems = (props) => (
@@ -17,7 +17,7 @@ const WorkItems = (props) => (
               <h5 className="work__title bold">{item.position}</h5>
               <h6 className="work__title">{item.company}, {item.location}</h6>
               <p className="text--disclaimer">
-                From {item.start} to {item.end} ({duration(item.start, item.end)})
+                From {item.start} to {item.end} ({workDuration(new Date(item.start), new Date(item.end))})
               </p>
             </div>
           </header>

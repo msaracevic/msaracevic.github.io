@@ -1,25 +1,24 @@
-import moment from 'moment';
+export function workDuration(d1, d2) {
+  let monthsDiff;
+  monthsDiff = (d2.getFullYear() - d1.getFullYear()) * 12;
+  monthsDiff -= d1.getMonth();
+  monthsDiff += d2.getMonth();
+  monthsDiff += 1;
 
-export function duration(start, end) {
-  if (end === 'Present') end = moment();
-  const duration = moment(end, 'MMMM YYYY').diff(moment(start, 'MMMM YYYY'), 'months') + 1;
-  let result;
+  let response = "";
+  let years = Math.floor(monthsDiff / 12);
+  let months = monthsDiff - years * 12;
 
-  if (duration > 12) {
-    const years = Math.floor(duration / 12);
-    const months = duration - (years * 12);
+  if (years === 1) response += `1 year and `;
+  else if (years > 1) response += `${years} years and `;
+  if (months === 1) response += `1 month`;
+  else if (months > 1) response += `${months} months`;
 
-    result = `${years} ${years === 1 ? 'year' : 'years'} 
-              and ${months} ${months === 1 ? 'month' : 'months'}`;
-  } else {
-    result = `${duration} ${duration === 1 ? 'month' : 'months'}`;
-  }
-
-  return result;
+  return response;
 }
 
 export function decodeHtmlEntity(entity) {
-  const txt = document.createElement('textarea');
+  const txt = document.createElement("textarea");
   txt.innerHTML = entity;
   return txt.value;
 }
