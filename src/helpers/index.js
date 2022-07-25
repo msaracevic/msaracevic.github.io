@@ -1,5 +1,9 @@
 export function workDuration(d1, d2) {
   let monthsDiff;
+  const open = !d2;
+
+  if (open) d2 = new Date();
+
   monthsDiff = (d2.getFullYear() - d1.getFullYear()) * 12;
   monthsDiff -= d1.getMonth();
   monthsDiff += d2.getMonth();

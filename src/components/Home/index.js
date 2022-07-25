@@ -17,7 +17,7 @@ const WorkItems = (props) => (
               <h5 className="work__title bold">{item.position}</h5>
               <h6 className="work__title">{item.company}, {item.location}</h6>
               <p className="text--disclaimer">
-                From {item.start} to {item.end} ({workDuration(new Date(item.start), new Date(item.end))})
+                From {item.start} {item.end ? "to" : "and still active"} {item.end} ({workDuration(new Date(item.start), item.end ? new Date(item.end) : undefined)})
               </p>
             </div>
           </header>

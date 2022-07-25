@@ -1,5 +1,5 @@
 {
-  "available": false,
+  "available": true,
   "contact": [
     {
       "url": "https://www.linkedin.com/in/mirsarace",
@@ -13,6 +13,22 @@
     }
   ],
   "professional": [
+    {
+      "company": "Freelancer",
+      "start": "May 2021",
+      "end": false,
+      "image": "/images/personal.jpeg",
+      "appImage": "/images/apps/freelance.png",
+      "position": "Freelance Web Engineer",
+      "location": "Berlin",
+      "description": "Various projects of various lengths, more information on request. Here is quick overview of some of the projects:",
+      "responsibilities": [
+        "Small and quick delivery project for one of my previous full time employment companies",
+        "Remote E-Learning analytics / gamified dashboard tool for Berlin based company",
+        "Remote Team Building software (in browser games like trivia questionnaire within video calls) for US based company <b>backed by YCombinator</b>"
+      ],
+      "technologies": "React, CRA, Next.js, React Redux, SASS, node scripts, npm, git."
+    },
     {
       "company": "Billie GmbH",
       "start": "September 2019",
@@ -44,7 +60,7 @@
         "Creating and maintaining admin dashboard for managing the system",
         "Creating and maintaining server infrastructure",
         "Defining tech stack, coding standards and conventions"
-     ],
+      ],
       "technologies": "React, Express.js, SASS, postgres, npm, git."
     },
     {
