@@ -42,7 +42,7 @@ const WorkItems = (props) => (
 const Personal = props => (
   <section className="home__personal">
     <div className="home__links">
-      <div className="home__my-image"><img src="/images/personal.jpeg" alt="personal"/></div>
+      <div className="home__my-image"><img src="/images/personal_v2.jpg" alt="personal"/></div>
       <div className="home__contacts">
         {props.contact.map(contact => (
           <a href={contact.url} key={contact.url} className="home__contact" target="_blank" rel="noopener noreferrer">

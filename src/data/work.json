@@ -14,10 +14,26 @@
   ],
   "professional": [
     {
+      "company": "Embea GmbH",
+      "start": "November 2022",
+      "end": false,
+      "image": "/images/work/embea.jpeg",
+      "appImage": "/images/apps/embea.png",
+      "position": "Senior Frontend Engineer",
+      "location": "Berlin",
+      "description": "Embea is the first life insurance company that provides coverage exclusively through digital interfaces.",
+      "responsibilities": [
+        "Hired as first frontend dedicated professional in the company",
+        "Building frontend for customer facing applications",
+        "Building frontend architecture"
+      ],
+      "technologies": "React, CRA, React Redux, SASS, node scripts, npm, git, AWS."
+    },
+    {
       "company": "Freelancer",
       "start": "May 2021",
       "end": false,
-      "image": "/images/personal.jpeg",
+      "image": "/images/personal_v2.jpg",
       "appImage": "/images/apps/freelance.png",
       "position": "Freelance Web Engineer",
       "location": "Berlin",
