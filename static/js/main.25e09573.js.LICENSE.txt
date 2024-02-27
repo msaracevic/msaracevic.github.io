@@ -1,5 +1,3 @@
-/*! For license information please see main.js.LICENSE.txt */
-
 /**
  * @license React
  * react-dom.production.min.js
