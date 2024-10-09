@@ -16,16 +16,17 @@
     {
       "company": "Embea GmbH",
       "start": "November 2022",
-      "end": false,
+      "end": "December 2024",
       "image": "/images/work/embea.jpeg",
       "appImage": "/images/apps/embea.png",
       "position": "Senior Frontend Engineer",
       "location": "Berlin",
-      "description": "Embea is the first life insurance company that provides coverage exclusively through digital interfaces.",
+      "description": "Embea is an insurance company providing a comprehensive 360-degree insurance platform with high customization potential for its distribution partners.",
       "responsibilities": [
-        "Hired as first frontend dedicated professional in the company",
-        "Building frontend for customer facing applications",
-        "Building frontend architecture"
+        "Hired as first frontend dedicated professional in the company. Leading tech strategy development as a core team member and mentoring the team.",
+        "Building frontend for customer-facing checkout funnel and internal operational tools",
+        "Designing a scalable frontend architecture to support no-code configuration for partners.",
+        "Reducing checkout time from 8 to 3 minutes by optimizing components and codebase."
       ],
       "technologies": "React, CRA, React Redux, SASS, node scripts, npm, git, AWS."
     },

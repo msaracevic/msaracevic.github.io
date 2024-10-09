@@ -55,6 +55,7 @@ const Resources = () => {
           </div>
           <div className="resources__item">
             <ReactEmbedGist gist="msaracevic/5d757e2fc72482a9a4a439969500c2eb" wrapperClass="gist"/>
+            <ReactEmbedGist gist="msaracevic/5d757e2fc72482a9a4a439969500c2eb" wrapperClass="gist"/>
           </div>
           <div className="resources__item resources__item--so">
             <h2 className="title">Stack Overflow Questions</h2>
