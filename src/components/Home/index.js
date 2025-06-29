@@ -11,8 +11,6 @@ const Chevron = () => <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/s
 const WorkItems = (props) => {
   const [openSections, setOpenSections] = React.useState(Array.from({length: props.items.length}, (_, i) => i < 4));
 
-  console.log(openSections)
-
   return (
     <section className="work">
       <div className="work__items">
@@ -37,7 +35,7 @@ const WorkItems = (props) => {
                 </h5>
                 <h6 className="work__title">{item.company}, {item.location}</h6>
                 <p className="text--disclaimer">
-                  From {item.start} {item.end ? "to" : "and still active"} {item.end} (<span className="text--bold">{workDuration(new Date(item.start), item.end ? new Date(item.end) : undefined)}</span>)
+                  {workDuration(new Date(item.start), item.end ? new Date(item.end) : undefined)}, from {item.start} {item.end ? "to" : "and still active"} {item.end}
                 </p>
               </div>
             </header>
@@ -98,7 +96,7 @@ const Personal = props => (
 const TechIcons = () => (
   <section className="home__tech">
     <h2>Technologies I use</h2><br/>
-    {['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'PostgreSQL'].map(tech =>
+    {['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Redux', 'Node.js', 'PostgreSQL'].map(tech =>
       <div className="home__tech-item" key={tech}>
         <div className="home__tech-image">
           <img src={`/images/tech/${tech.toLowerCase()}.png`} alt={tech}/>

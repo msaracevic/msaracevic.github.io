@@ -13,10 +13,10 @@ export function workDuration(d1, d2) {
   let years = Math.floor(monthsDiff / 12);
   let months = monthsDiff - years * 12;
 
-  if (years === 1) response += `1 year and `;
-  else if (years > 1) response += `${years} years and `;
-  if (months === 1) response += `1 month`;
-  else if (months > 1) response += `${months} months`;
+  if (years === 1) response += `1Y and `;
+  else if (years > 1) response += `${years}Y and `;
+  if (months === 1) response += `1M`;
+  else if (months > 1) response += `${months}M`;
 
   return response;
 }
