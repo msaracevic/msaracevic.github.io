@@ -1,43 +1,64 @@
 import React from 'react';
 import work from '../../data/work.json';
-import { workDuration } from "../../helpers/index";
+import {workDuration} from "../../helpers/index";
 import './Home.scss';
 
-const WorkItems = (props) => (
-  <section className="work">
-    <div className="work__items">
-      <h2>Places I've worked at</h2>
-      {props.items.map(item => (
-        <div key={item.company} className="work__item">
-          <header className="work__header">
-            <div className="work__image">
-              <img src={item.image} alt={item.company}/>
-            </div>
-            <div className="work__company-info">
-              <h5 className="work__title bold">{item.position}</h5>
-              <h6 className="work__title">{item.company}, {item.location}</h6>
-              <p className="text--disclaimer">
-                From {item.start} {item.end ? "to" : "and still active"} {item.end} ({workDuration(new Date(item.start), item.end ? new Date(item.end) : undefined)})
-              </p>
-            </div>
-          </header>
-          <div className="work__body">
-            <div className="work__app-image"><img src={item.appImage} alt={item.company}/></div>
-            <div className="work__details">
-              <p dangerouslySetInnerHTML={{__html: item.description}}/>
-              {item.responsibilities &&
-              <ul>{item.responsibilities.map(responsibility =>
-                <li key={Math.random()} dangerouslySetInnerHTML={{__html: responsibility}}/>
-              )}
-              </ul>}
-              <p className="text--bold">Tech stack: {item.technologies}</p>
+const Chevron = () => <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20 30 L50 50 L80 30" strokeWidth="8" stroke="currentColor" fill="none"></path>
+  <path d="M20 50 L50 70 L80 50" strokeWidth="8" stroke="currentColor" fill="none"></path>
+</svg>
+
+const WorkItems = (props) => {
+  const [openSections, setOpenSections] = React.useState(Array.from({length: props.items.length}, (_, i) => i < 4));
+
+  console.log(openSections)
+
+  return (
+    <section className="work">
+      <div className="work__items">
+        <h2>Places I've worked at</h2>
+        {props.items.map((item, index) => (
+          <div key={item.company} className="work__item">
+            <header className="work__header"  onClick={() => {
+              const newOpenSections = [...openSections];
+              newOpenSections[index] = !newOpenSections[index];
+              setOpenSections(newOpenSections);
+            }}>
+              <div className="work__image">
+                <img src={item.image} alt={item.company}/>
+              </div>
+              <div className="work__company-info">
+                <h5 className="work__title bold">{item.position}
+                  <span
+                    className={openSections[index] ? 'work__chevron work__chevron--open' : 'work__chevron work__chevron--closed'}
+                   >
+                  <Chevron/>
+                </span>
+                </h5>
+                <h6 className="work__title">{item.company}, {item.location}</h6>
+                <p className="text--disclaimer">
+                  From {item.start} {item.end ? "to" : "and still active"} {item.end} (<span className="text--bold">{workDuration(new Date(item.start), item.end ? new Date(item.end) : undefined)}</span>)
+                </p>
+              </div>
+            </header>
+            <div className={openSections[index] ? 'work__body work__body--open' : 'work__body work__body--closed'}>
+              <div className="work__app-image"><img src={item.appImage} alt={item.company}/></div>
+              <div className="work__details">
+                <p dangerouslySetInnerHTML={{__html: item.description}}/>
+                {item.responsibilities &&
+                  <ul>{item.responsibilities.map(responsibility =>
+                    <li key={Math.random()} dangerouslySetInnerHTML={{__html: responsibility}}/>
+                  )}
+                  </ul>}
+                <p className="text--bold">Tech stack: {item.technologies}</p>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+        ))}
+      </div>
+    </section>
+  )
+};
 
 const Personal = props => (
   <section className="home__personal">
@@ -174,7 +195,8 @@ const GetInTouch = () => (
     </p>
     <h2 className='title'>Get in touch</h2>
     <p className="text--large">
-      For any inquiries feel free to send me an email to <a href="mailto:dev.msaracevic@gmail.com">dev.msaracevic@gmail.com</a>.<br/>
+      For any inquiries feel free to send me an email to <a
+      href="mailto:dev.msaracevic@gmail.com">dev.msaracevic@gmail.com</a>.<br/>
       More references are available upon request.
     </p>
   </section>

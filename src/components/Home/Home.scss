@@ -204,17 +204,48 @@
 
   &__item {
     max-width: 800px;
-    margin: 4rem auto;
+    margin: 1rem auto;
+  }
+
+  &__chevron {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    line-height: 1;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    transition: all .2s ease-out;
+    user-select: none;
+
+    &--closed {
+      transform: rotate(-180deg);
+    }
   }
 
   &__header {
     display: flex;
     justify-content: space-between;
+    position: relative;
+    cursor: pointer;
   }
 
   &__body {
     display: flex;
     flex-wrap: wrap;
+    transition: all 0.2s ease-in-out;
+
+    &--open {
+      max-height: 100vh;
+      opacity: 1;
+      margin-bottom: 4rem;
+    }
+
+    &--closed {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+    }
   }
 
   &__app-image {
@@ -257,7 +288,7 @@
     }
 
     &__item {
-      margin-bottom: 6rem;
+      margin-bottom: 1rem;
 
       &:nth-of-type(odd) {
 

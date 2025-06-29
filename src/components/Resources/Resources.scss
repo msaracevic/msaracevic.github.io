@@ -3,6 +3,7 @@
 
 .resources {
   padding: 1rem;
+
   &__item {
     max-width: 1000px;
     margin: 2rem auto 5rem;
@@ -20,10 +21,13 @@
 }
 
 .so-item {
-  margin: 0 0 2rem;
+  margin: 0 0 0.5rem;
   flex: 100%;
   display: flex;
   flex-wrap: wrap;
+  background: rgba(#F0F0F0, 0.8);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
 
   @include media-breakpoint-up(md) {
     flex: 0 1 45%;
@@ -40,13 +44,17 @@
   }
 
   &__user {
-    margin: 1rem 0 0;
-    flex: 0 0 36px;
+    margin: 0.25rem 0 0;
+    flex: 0 0 48px;
+
+    img {
+      border-radius: 4px;
+    }
   }
 
   &__content {
     flex: 1 0;
-    padding-left: 1rem;
+    padding-left: 0.75rem;
   }
 
   &__details {
@@ -59,6 +67,7 @@
     margin: 0.2rem 0.3rem 0.2rem 0;
     padding: 0.1rem 0.3rem;
     background-color: rgba(#D0D0D0, 0.6);
+    border-radius: 4px;
   }
 }
 

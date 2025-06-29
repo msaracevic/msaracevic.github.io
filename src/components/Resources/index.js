@@ -16,7 +16,7 @@ const StackOverflowItems = (props) => (
         {decodeHtmlEntity(item.title)}
       </a>
       <div className="so-item__user">
-        <img src={item.owner.profile_image} alt="owner"/>
+        <img src={item.owner.profile_image} alt="owner" referrerPolicy="no-referrer"/>
       </div>
       <div className="so-item__content">
         <p className="so-item__details">
@@ -42,7 +42,10 @@ const Resources = () => {
   useEffect(() => {
     if (isMounted) {
       fetch(favoritesUrl).then(response => response.json()).then(response => setFavorites(response));
-      fetch(questionsUrl).then(response => response.json()).then(response => setQuestions(response));
+      fetch(questionsUrl).then(response => response.json()).then(response => {
+        const orderedItems = response.items.sort((a, b) => b.view_count - a.view_count);
+        setQuestions({...response, items: orderedItems});
+      });
     } else setIsMounted(false);
   }, [setIsMounted]);
 
